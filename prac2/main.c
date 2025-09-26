@@ -18,7 +18,13 @@ int processInput(){
 
   res = scanf("%lf", &m);
 
-  if(res != 1) return 0;
+  if(res != 1){
+    char ch;
+
+    while((ch = getchar()) != '\n' && ch != EOF); // discarding non-numeric input
+    return 0;
+  }
+
   if(m < 0) return 0;
 
   data.sqm = sqrt(m);
